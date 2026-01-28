@@ -165,12 +165,12 @@ def run(argv: Optional[Sequence[str]] = None) -> int:
     if args.verbose:
         create_args.append("--verbose")
 
-    create_args.extend(["--hash_format", args.hash_format])
+    create_args.extend(["--hash-format", args.hash_format])
 
     if args.no_directory_hashes:
         create_args.append("--no_directory_hashes")
     if args.detect_renaming:
-        create_args.append("--detect_renaming")
+        create_args.append("--detect-renaming")
 
     for pat in args.ignore:
         create_args.extend(["-i", pat])
@@ -182,14 +182,14 @@ def run(argv: Optional[Sequence[str]] = None) -> int:
     if args.comment:
         create_args.extend(["--comment", args.comment])
 
-    create_args.extend(["--author_name", author_name])
+    create_args.extend(["--author-name", author_name])
 
     if args.author_email:
-        create_args.extend(["--author_email", args.author_email])
+        create_args.extend(["--author-email", args.author_email])
     if args.author_phone:
-        create_args.extend(["--author_phone", args.author_phone])
+        create_args.extend(["--author-phone", args.author_phone])
     if args.author_role:
-        create_args.extend(["--author_role", args.author_role])
+        create_args.extend(["--author-role", args.author_role])
 
     create_args.append(root_dir)
 
