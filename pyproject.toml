@@ -3,12 +3,20 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ascmhl-tool"
+name = "ascmhl-generator"
 version = "0.1.0"
-description = "ascmhl generator"
+description = "Generate ASC MHL manifests + always verify a directory"
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = ["xxhash>=3.4.1"]
+requires-python = ">=3.9"
+dependencies = [
+  "ascmhl",
+]
 
 [project.scripts]
-make-manifest = "manifest_tool.cli:main"
+ascmhl-gen = "ascmhl_generator.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
